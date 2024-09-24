@@ -13,6 +13,10 @@ const navLinks = [
     href: "/posts",
     label: "Posts",
   },
+  {
+    href: "/create-post",
+    label: "Create post",
+  },
 ];
 
 export default function Header() {
@@ -35,7 +39,7 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 className={`${
-                  pathname === link.href ? "text-rose-100" : "text-white"
+                  pathname === link.href ? "text-lime-200" : "text-white"
                 }`}
                 href={link.href}
               >

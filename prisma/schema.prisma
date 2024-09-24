@@ -1,0 +1,21 @@
+//Prisma is a database toolkit that simplifies working with databases in Node.js and TypeScript. 
+//It provides a type-safe ORM (Object-Relational Mapping) that allows developers to interact with databases using an intuitive API.
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  body      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
